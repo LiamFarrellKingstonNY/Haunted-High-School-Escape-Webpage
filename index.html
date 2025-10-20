@@ -4,7 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Haunted High School Escape</title>
-    <!-- SEO + Author Meta Tags -->
+
+  <!-- SEO + Author Meta Tags -->
   <meta name="description" content="Haunted High School Escape — a cinematic text-based horror game by Liam Farrell, a Kingston NY developer and photographer. Explore the haunted halls and discover the art behind the code.">
   <meta name="author" content="Liam Farrell">
   <meta name="keywords" content="Liam Farrell Kingston NY, Liam Farrell photography, Haunted High School Escape, indie horror game, text adventure, web developer Kingston NY">
@@ -15,27 +16,32 @@
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Liam Farrell",
+    "alternateName": "Liam Farrell Kingston NY",
     "jobTitle": "Software Developer & Photographer",
+    "description": "Liam Farrell is a software developer and photographer based in Kingston, NY, known for creating secure web applications and cinematic digital experiences like Haunted High School Escape.",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "Kingston",
-      "addressRegion": "NY"
+      "addressRegion": "NY",
+      "addressCountry": "US"
     },
     "url": "https://hauntedhighschoolescape.com",
     "sameAs": [
-      "https://github.com/liamfarrellkingstonny",
+      "https://github.com/LiamFarrellKingstonNY",
       "https://www.instagram.com/keliphotography",
-      "https://liamfarrellkingstonny.com"
+      "https://liamfarrellkingstonny.com",
+      "https://www.linkedin.com/in/liamfarrellkingstonny"
     ]
   }
   </script>
+
   <style>
     :root{
-      --bg:#0b0b0f;          /* deep charcoal */
-      --panel:#121217;       /* panel bg */
-      --ink:#e6e6e6;         /* primary text */
-      --muted:#9a9aa3;       /* secondary text */
-      --accent:#e63946;      /* blood red */
+      --bg:#0b0b0f;
+      --panel:#121217;
+      --ink:#e6e6e6;
+      --muted:#9a9aa3;
+      --accent:#e63946;
       --accent-dim:#99323a;
       --glow: 0 0 12px rgba(230,57,70,.6);
     }
@@ -45,72 +51,38 @@
       color:var(--ink); font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
       letter-spacing:.2px;
     }
-
-    /* Subtle film grain */
     .grain:before{content:""; position:fixed; inset:0; pointer-events:none; opacity:.05; mix-blend-mode:overlay; background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120" viewBox="0 0 120 120"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" stitchTiles="stitch"/></filter><rect width="120" height="120" filter="url(%23n)" opacity="0.4"/></svg>');}
-
     .wrap{max-width:900px; padding:28px; margin:0 auto;}
-
     header{display:flex; align-items:center; gap:16px; padding:20px 0 10px 0;}
-    .title{
-      font-size: clamp(24px, 3.5vw, 40px);
-      letter-spacing:.08em;
-      text-transform:uppercase;
-      font-weight:800;
-      color:var(--ink);
-      text-shadow: var(--glow);
-    }
+    .title{font-size: clamp(24px, 3.5vw, 40px); letter-spacing:.08em; text-transform:uppercase; font-weight:800; color:var(--ink); text-shadow: var(--glow);}
     .tagline{color:var(--muted); font-size:.95rem}
-
-    .panel{
-      background:linear-gradient(180deg, rgba(255,255,255,.02), transparent 40%), var(--panel);
-      border:1px solid #1f1f29;
-      border-radius:14px;
-      box-shadow: 0 10px 30px rgba(0,0,0,.35);
-      overflow:hidden;
-    }
-
+    .panel{background:linear-gradient(180deg, rgba(255,255,255,.02), transparent 40%), var(--panel); border:1px solid #1f1f29; border-radius:14px; box-shadow: 0 10px 30px rgba(0,0,0,.35); overflow:hidden;}
     .hud{display:flex; gap:16px; flex-wrap:wrap; padding:14px 14px 0 14px}
-    .chip{
-      background:#0e0e14; border:1px solid #1f1f29; color:var(--muted);
-      padding:8px 12px; border-radius:999px; font-size:.85rem;
-    }
-
+    .chip{background:#0e0e14; border:1px solid #1f1f29; color:var(--muted); padding:8px 12px; border-radius:999px; font-size:.85rem;}
     #log{height:54vh; min-height:360px; max-height:62vh; overflow:auto; padding:22px; line-height:1.65;}
     #log p{margin:.4em 0; opacity:0; animation:fadeIn .5s forwards ease-out;}
     #log .system{color:#b6b6be}
     #log .danger{color:var(--accent)}
     @keyframes fadeIn{to{opacity:1;}}
-
     .divider{height:1px; background:#1f1f29; margin:6px 14px;}
-
     .cmd{display:flex; align-items:center; gap:10px; padding:14px;}
     .prompt{color:var(--accent); font-weight:700;}
-    #command{
-      flex:1; background:#0c0c12; color:var(--ink); border:1px solid #1f1f29; outline:none;
-      padding:12px 14px; border-radius:10px; font-size:16px;
-      transition:border-color .2s;
-    }
+    #command{flex:1; background:#0c0c12; color:var(--ink); border:1px solid #1f1f29; outline:none; padding:12px 14px; border-radius:10px; font-size:16px; transition:border-color .2s;}
     #command:focus{border-color:#2e2e3a;}
-
     .toolbar{display:flex; gap:10px; padding:0 14px 14px 14px; flex-wrap:wrap}
     .btn{cursor:pointer; background:#181820; color:#e9e9f1; border:1px solid #2a2a34; padding:10px 12px; border-radius:10px; font-size:.92rem; transition:transform .06s ease, background .2s}
     .btn:hover{background:#1f1f29}
     .btn:active{transform:scale(.98)}
     .btn.red{background:linear-gradient(180deg, rgba(230,57,70,.18), rgba(230,57,70,.06)); border-color:#4c1e24}
-
     .continue{display:none; text-align:center; padding:8px 0 14px 0; color:#ee97a0; font-size:.95rem}
     .blink{animation:blink 1.2s step-end infinite}
     @keyframes blink{50%{opacity:.25}}
-
-    /* Mobile fine-tuning */
-    @media (max-width:600px){
-      #log{height:50vh;}
-    }
+    @media (max-width:600px){#log{height:50vh;}}
   </style>
 </head>
 <body class="grain">
-  <audio id="ambience" src="audio/ambience.mp3" preload="auto" loop muted></audio>
+  <!-- Audio fixed: plays after interaction -->
+  <audio id="ambience" src="audio/ambience.mp3" preload="auto" loop></audio>
 
   <div class="wrap">
     <header>
@@ -134,18 +106,15 @@
         <input id="command" type="text" placeholder="Type: go north · get ancient book · help" autocomplete="off" inputmode="text" />
       </div>
       <div class="toolbar">
-        <button class="btn" id="btnHelp" aria-label="Show help">Help</button>
-        <button class="btn" id="btnLook" aria-label="Look around">Look</button>
-        <button class="btn" id="btnMute" aria-label="Toggle sound">Unmute Ambience</button>
-        <button class="btn red" id="btnRestart" aria-label="Restart game">Restart</button>
+        <button class="btn" id="btnHelp">Help</button>
+        <button class="btn" id="btnLook">Look</button>
+        <button class="btn" id="btnMute">Unmute Ambience</button>
+        <button class="btn red" id="btnRestart">Restart</button>
       </div>
     </section>
   </div>
 
   <script>
-    /* -------------------------
-       Game Data (from Python)
-    --------------------------*/
     const rooms = {
       "Main Entrance": { North: "Library", South: "Cafeteria", East: "Science Lab", West: "Gymnasium" },
       "Library": { South: "Main Entrance", item: "Ancient Book" },
@@ -157,17 +126,8 @@
       "Principal's Office": { South: "Auditorium", item: "Ghost" }
     };
 
-    /* -------------------------
-       State
-    --------------------------*/
-    let currentRoom = "Main Entrance";
-    let inventory = [];
-    let moves = 0;
-
-    // Typing / pacing
-    let messageQueue = [];
-    let isTyping = false;
-    let waitingForContinue = false;
+    let currentRoom = "Main Entrance", inventory = [], moves = 0;
+    let messageQueue = [], isTyping = false, waitingForContinue = false;
 
     const logEl = document.getElementById('log');
     const cmdEl = document.getElementById('command');
@@ -175,263 +135,42 @@
     const invChip = document.getElementById('invChip');
     const movesEl = document.getElementById('moves');
     const contEl = document.getElementById('continue');
-
     const ambience = document.getElementById('ambience');
     const btnMute = document.getElementById('btnMute');
 
-    /* -------------------------
-       Utilities
-    --------------------------*/
-    function setHUD(){
-      roomChip.textContent = `Room: ${currentRoom}`;
-      invChip.textContent = `Inventory: ${inventory.length ? inventory.join(', ') : 'empty'}`;
-      movesEl.textContent = moves;
-    }
+    ambience.volume = 0.4;
 
-    function scrollLog(){
-      logEl.scrollTop = logEl.scrollHeight;
-    }
+    // Play ambience after first user interaction
+    document.body.addEventListener('click', () => attemptPlayAmbience(), { once: true });
+    cmdEl.addEventListener('keydown', () => attemptPlayAmbience(), { once: true });
 
-    function addParagraph(text, cssClass){
-      const p = document.createElement('p');
-      if(cssClass) p.classList.add(cssClass);
-      p.innerHTML = text;
-      logEl.appendChild(p);
-      scrollLog();
-      return p;
-    }
-
-    function typeText(text, cssClass = null, charDelay = 18){
-      return new Promise(resolve => {
-        const p = addParagraph('', cssClass);
-        let i = 0;
-        isTyping = true;
-        const id = setInterval(()=>{
-          p.innerHTML = text.slice(0, i+1);
-          i++;
-          scrollLog();
-          if(i >= text.length){
-            clearInterval(id);
-            isTyping = false;
-            resolve();
-          }
-        }, charDelay);
-      });
-    }
-
-    async function say(text, css = null, paced = true){
-      if(!paced){ addParagraph(text, css); return; }
-      messageQueue.push({text, css});
-      if(isTyping || waitingForContinue) return;
-      while(messageQueue.length){
-        const {text: t, css: c} = messageQueue.shift();
-        await typeText(t, c);
-        await pauseForContinue();
-      }
-    }
-
-    function showContinue(show){
-      contEl.style.display = show ? 'block' : 'none';
-    }
-
-    function pauseForContinue(){
-      waitingForContinue = true;
-      showContinue(true);
-      return new Promise(resolve => {
-        function onKey(e){
-          if(e.key === 'Enter'){
-            window.removeEventListener('keydown', onKey);
-            waitingForContinue = false;
-            showContinue(false);
-            resolve();
-          }
-        }
-        window.addEventListener('keydown', onKey);
-      });
-    }
-
-    function endGame(text, win=false){
-      say(text, win ? null : 'danger');
-      cmdEl.disabled = true;
-      cmdEl.placeholder = win ? 'You did it. Refresh or press Restart.' : 'Game over. Refresh or press Restart.';
-    }
-
-    function helpText(){
-      return [
-        "Commands: <em>go north</em>, <em>go south</em>, <em>go east</em>, <em>go west</em>",
-        "Pick up: <em>get &lt;item name&gt;</em>",
-        "Other: <em>look</em>, <em>help</em>, <em>restart</em>",
-        "Goal: Collect all 6 sacred artifacts, then enter the Principal's Office."
-      ].join('<br>');
-    }
-
-    function look(){
-      const item = rooms[currentRoom].item;
-      say(`You are in the <strong>${currentRoom}</strong>.`, 'system');
-      say(`Paths: ${Object.keys(rooms[currentRoom]).filter(k=>['North','South','East','West'].includes(k)).join(', ') || 'none'}.`, 'system');
-      if(item && item !== 'Ghost') say(`You see a <strong>${item}</strong>.`, 'system');
-      setHUD();
-    }
-
-    function normalizeDirection(word){
-      const d = word.trim().toLowerCase();
-      if(['n','north'].includes(d)) return 'North';
-      if(['s','south'].includes(d)) return 'South';
-      if(['e','east'].includes(d)) return 'East';
-      if(['w','west'].includes(d)) return 'West';
-      return null;
-    }
-
-    function tryMove(dirWord){
-      const dir = normalizeDirection(dirWord);
-      if(!dir){ say("I don't understand that direction."); return; }
-      const next = rooms[currentRoom][dir];
-      if(!next){ say("You can't go that way."); return; }
-      currentRoom = next; moves++;
-      setHUD();
-
-      // Lose condition
-      if(rooms[currentRoom].item === 'Ghost' && inventory.length < 6){
-        say("You entered the Principal's Office without all artifacts...", 'danger');
-        endGame("Your soul is mine now... forever... <strong>GAME OVER</strong>!", false);
-        return;
-      }
-
-      // Win condition
-      if(currentRoom === "Principal's Office" && inventory.length === 6){
-        say("You step into the Principal's Office, all artifacts in hand.");
-        say("You use the <strong>Ancient Book</strong> to speak the ghost's name.");
-        endGame("The ghost fades... <strong>You WIN!</strong> Congratulations, you escaped the Haunted High School.", true);
-        return;
-      }
-
-      // Normal room status
-      look();
-    }
-
-    function tryGet(itemText){
-      const itemInRoom = rooms[currentRoom].item;
-      if(!itemInRoom){ say(`There's nothing to get here.`); return; }
-      if(itemInRoom.toLowerCase() === itemText.toLowerCase() && !inventory.includes(itemInRoom)){
-        inventory.push(itemInRoom);
-        delete rooms[currentRoom].item;
-        say(`<strong>${itemInRoom}</strong> retrieved!`);
-        setHUD();
-      } else {
-        say(`Can't get ${itemText}.`);
-      }
-    }
-
-    function handleCommand(raw){
-      const move = (raw||'').trim();
-      if(!move) return; // ignore empty
-
-      // Echo the command
-      addParagraph(`&gt; ${move}`);
-
-      const lower = move.toLowerCase();
-      if(lower === 'help') return say(helpText(), 'system', false);
-      if(lower === 'look') return look();
-      if(lower === 'restart') return restart();
-
-      if(lower.startsWith('go ')){
-        const dirWord = lower.slice(3).trim();
-        return tryMove(dirWord);
-      }
-
-      if(lower.startsWith('get ')){
-        const wanted = move.slice(4).trim();
-        if(!wanted){ say('Get what?'); return; }
-        return tryGet(wanted);
-      }
-
-      say("Invalid command. Try 'go [direction]' or 'get [item]'.");
-    }
-
-    /* -------------------------
-       Ambience controls
-    --------------------------*/
-    async function attemptPlayAmbience(){
-      try{ await ambience.play(); btnMute.textContent = 'Mute Ambience'; }
-      catch{ /* likely blocked until user interaction */ }
-    }
-
-    btnMute.addEventListener('click', async ()=>{
-      if(ambience.muted){
-        ambience.muted = false; await attemptPlayAmbience();
-      } else {
-        ambience.muted = true; ambience.pause(); btnMute.textContent = 'Unmute Ambience';
-      }
-      if(!ambience.muted) btnMute.textContent = 'Mute Ambience';
-    });
-
-    /* -------------------------
-       Buttons & Input
-    --------------------------*/
-    document.getElementById('btnHelp').addEventListener('click', ()=> say(helpText(), 'system', false));
-    document.getElementById('btnLook').addEventListener('click', ()=> look());
-    document.getElementById('btnRestart').addEventListener('click', ()=> restart());
-
-    cmdEl.addEventListener('keydown', (e)=>{
-      if(waitingForContinue){
-        // If pacing prompt is visible, let Enter advance the story
-        if(e.key === 'Enter'){
-          e.preventDefault();
-          // The window keydown listener handles continue
-          return;
-        }
-      } else if(e.key === 'Enter'){
-        const v = cmdEl.value; cmdEl.value = '';
-        handleCommand(v);
-      }
-    });
-
-    /* -------------------------
-       Boot / Restart
-    --------------------------*/
-    function intro(){
-      say("The night air is cold as you stand before the old high school.");
-      say("Some doors should stay closed. This one creaks open by itself.");
-      say("Collect <strong>six sacred artifacts</strong> and confront what lurks within.");
-      say("Move with <em>go north/south/east/west</em>. Pick up with <em>get &lt;item&gt;</em>.", 'system');
-      say("Beware the Principal's Office until you are ready...", 'danger');
-      look();
-      attemptPlayAmbience();
-    }
-
-    function resetRooms(){
-      // rebuild rooms to restore items after restart
-      Object.assign(rooms["Main Entrance"], { North: "Library", South: "Cafeteria", East: "Science Lab", West: "Gymnasium" });
-      rooms["Library"] = { South: "Main Entrance", item: "Ancient Book" };
-      rooms["Science Lab"] = { West: "Main Entrance", South: "Art Room", item: "Beaker of Ghost Mist" };
-      rooms["Gymnasium"] = { East: "Main Entrance", South: "Art Room", item: "Sacred Whistle" };
-      rooms["Cafeteria"] = { North: "Main Entrance", item: "Silver Spoon" };
-      rooms["Art Room"] = { North: "Gymnasium", West: "Science Lab", East: "Auditorium", item: "Paintbrush of Light" };
-      rooms["Auditorium"] = { West: "Art Room", North: "Principal's Office", item: "Echoing Bell" };
-      rooms["Principal's Office"] = { South: "Auditorium", item: "Ghost" };
-    }
-
-    function restart(){
-      // clear log
-      logEl.innerHTML = '';
-      currentRoom = 'Main Entrance';
-      inventory = [];
-      moves = 0;
-      setHUD();
-      cmdEl.disabled = false; cmdEl.placeholder = "Type: go north · get ancient book · help";
-      resetRooms();
-      intro();
-      cmdEl.focus();
-    }
-
-    // Start up
-    window.addEventListener('load', ()=>{
-      setHUD();
-      intro();
-      cmdEl.focus();
-    });
+    function setHUD(){roomChip.textContent=`Room: ${currentRoom}`;invChip.textContent=`Inventory: ${inventory.length?inventory.join(', '):'empty'}`;movesEl.textContent=moves;}
+    function scrollLog(){logEl.scrollTop=logEl.scrollHeight;}
+    function addParagraph(text,css){const p=document.createElement('p');if(css)p.classList.add(css);p.innerHTML=text;logEl.appendChild(p);scrollLog();return p;}
+    function typeText(text,css=null,delay=18){return new Promise(r=>{const p=addParagraph('',css);let i=0;isTyping=true;const id=setInterval(()=>{p.innerHTML=text.slice(0,i+1);i++;scrollLog();if(i>=text.length){clearInterval(id);isTyping=false;r();}},delay);});}
+    async function say(text,css=null,paced=true){if(!paced){addParagraph(text,css);return;}messageQueue.push({text,css});if(isTyping||waitingForContinue)return;while(messageQueue.length){const{ text:t, css:c}=messageQueue.shift();await typeText(t,c);await pauseForContinue();}}
+    function showContinue(show){contEl.style.display=show?'block':'none';}
+    function pauseForContinue(){waitingForContinue=true;showContinue(true);return new Promise(r=>{function onKey(e){if(e.key==='Enter'){window.removeEventListener('keydown',onKey);waitingForContinue=false;showContinue(false);r();}}window.addEventListener('keydown',onKey);});}
+    function endGame(t,win=false){say(t,win?null:'danger');cmdEl.disabled=true;cmdEl.placeholder=win?'You did it. Refresh or press Restart.':'Game over. Refresh or press Restart.';}
+    function helpText(){return["Commands: <em>go north/south/east/west</em>","Pick up: <em>get &lt;item&gt;</em>","Other: <em>look</em>, <em>help</em>, <em>restart</em>","Goal: Collect all 6 sacred artifacts, then enter the Principal's Office."].join('<br>');}
+    function look(){const item=rooms[currentRoom].item;say(`You are in the <strong>${currentRoom}</strong>.`,'system');say(`Paths: ${Object.keys(rooms[currentRoom]).filter(k=>['North','South','East','West'].includes(k)).join(', ')||'none'}.`,'system');if(item&&item!=='Ghost')say(`You see a <strong>${item}</strong>.`,'system');setHUD();}
+    function normalizeDirection(d){d=d.trim().toLowerCase();if(['n','north'].includes(d))return'North';if(['s','south'].includes(d))return'South';if(['e','east'].includes(d))return'East';if(['w','west'].includes(d))return'West';return null;}
+    function tryMove(dirWord){const dir=normalizeDirection(dirWord);if(!dir)return say("I don't understand that direction.");const next=rooms[currentRoom][dir];if(!next)return say("You can't go that way.");currentRoom=next;moves++;setHUD();if(rooms[currentRoom].item==='Ghost'&&inventory.length<6)return endGame("Your soul is mine now... forever... <strong>GAME OVER</strong>!",false);if(currentRoom==="Principal's Office"&&inventory.length===6)return endGame("The ghost fades... <strong>You WIN!</strong> Congratulations, you escaped the Haunted High School.",true);look();}
+    function tryGet(itemText){const item=rooms[currentRoom].item;if(!item)return say("There's nothing to get here.");if(item.toLowerCase()===itemText.toLowerCase()&&!inventory.includes(item)){inventory.push(item);delete rooms[currentRoom].item;say(`<strong>${item}</strong> retrieved!`);setHUD();}else say(`Can't get ${itemText}.`);}
+    function handleCommand(raw){const move=(raw||'').trim();if(!move)return;addParagraph(`&gt; ${move}`);const l=move.toLowerCase();if(l==='help')return say(helpText(),'system',false);if(l==='look')return look();if(l==='restart')return restart();if(l.startsWith('go '))return tryMove(l.slice(3));if(l.startsWith('get '))return tryGet(move.slice(4));say("Invalid command. Try 'go [direction]' or 'get [item]'.");}
+    async function attemptPlayAmbience(){try{ambience.play();btnMute.textContent='Mute Ambience';}catch{}}
+    btnMute.addEventListener('click',async()=>{if(ambience.paused){await ambience.play();btnMute.textContent='Mute Ambience';}else{ambience.pause();btnMute.textContent='Unmute Ambience';}});
+    document.getElementById('btnHelp').addEventListener('click',()=>say(helpText(),'system',false));
+    document.getElementById('btnLook').addEventListener('click',()=>look());
+    document.getElementById('btnRestart').addEventListener('click',()=>restart());
+    cmdEl.addEventListener('keydown',e=>{if(waitingForContinue&&e.key==='Enter'){e.preventDefault();return;}if(e.key==='Enter'){const v=cmdEl.value;cmdEl.value='';handleCommand(v);}});
+    function intro(){say("The night air is cold as you stand before the old high school.");say("Some doors should stay closed. This one creaks open by itself.");say("Collect <strong>six sacred artifacts</strong> and confront what lurks within.");say("Move with <em>go north/south/east/west</em>. Pick up with <em>get &lt;item&gt;</em>.",'system');say("Beware the Principal's Office until you are ready...",'danger');look();}
+    function resetRooms(){rooms["Library"].item="Ancient Book";rooms["Science Lab"].item="Beaker of Ghost Mist";rooms["Gymnasium"].item="Sacred Whistle";rooms["Cafeteria"].item="Silver Spoon";rooms["Art Room"].item="Paintbrush of Light";rooms["Auditorium"].item="Echoing Bell";rooms["Principal's Office"].item="Ghost";}
+    function restart(){logEl.innerHTML='';currentRoom='Main Entrance';inventory=[];moves=0;setHUD();cmdEl.disabled=false;cmdEl.placeholder="Type: go north · get ancient book · help";resetRooms();intro();cmdEl.focus();}
+    window.addEventListener('load',()=>{setHUD();intro();cmdEl.focus();});
   </script>
-    <footer style="text-align:center; margin-top:3rem; color:#9a9aa3;">
+
+  <footer style="text-align:center; margin-top:3rem; color:#9a9aa3;">
     <p>Created by <strong>Liam Farrell</strong> — a Kingston, NY-based software developer, photographer, and digital artist.</p>
     <p>© 2025 Liam Farrell · <a href="https://liamfarrellkingstonny.com" style="color:#e63946;">Portfolio</a></p>
   </footer>
