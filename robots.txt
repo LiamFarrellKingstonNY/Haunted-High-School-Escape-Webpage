@@ -1,0 +1,8 @@
+# robots.txt for HauntedHighSchoolEscape.com
+# Allow all crawlers to index every page
+
+User-agent: *
+Allow: /
+
+# Point search engines to your sitemap
+Sitemap: https://hauntedhighschoolescape.com/sitemap.xml
