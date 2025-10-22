@@ -142,7 +142,7 @@
 </head>
 <body class="grain">
    <section style="max-width:800px;margin:2rem auto;text-align:center;color:#9a9aa3;font-size:1rem;line-height:1.6;">
-    <p><strong>Haunted High School Escape</strong> is a cinematic, text-based horror adventure created by <strong>Liam Farrell</strong>, a <strong>Kingston NY</strong> developer and photographer. Enter the haunted halls, uncover six sacred artifacts, and experience a fusion of storytelling and code artistry from the Hudson Valley.</p>
+    <p><strong>Haunted High School Escape</strong> is a cinematic, text-based horror adventure created by <strong>Liam Farrell</strong>, a <strong>Kingston NY</strong> developer and photographer. Enter the haunted halls, uncover six sacred artifacts, and experience storytelling from the Hudson Valley.</p>
   </section>
   
   <audio id="ambience" src="audio/ambience.mp3" preload="auto" loop muted></audio>
@@ -270,6 +270,7 @@
     }
 
     function pauseForContinue(){
+
       waitingForContinue = true;
       showContinue(true);
       return new Promise(resolve => {
